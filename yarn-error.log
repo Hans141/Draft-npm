@@ -1,0 +1,69 @@
+Arguments: 
+  /home/oem/.nvm/versions/node/v14.17.6/bin/node /home/oem/.yarn/bin/yarn.js add @hans141/draft-npm@0.1.2
+
+PATH: 
+  /home/oem/.yarn/bin:/home/oem/.config/yarn/global/node_modules/.bin:/home/oem/.yarn/bin:/home/oem/.config/yarn/global/node_modules/.bin:/home/oem/.nvm/versions/node/v14.17.6/bin:/home/oem/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/mssql-tools/bin:/opt/mssql-tools/bin:/opt/mssql-tools/bin:/opt/mssql-tools/bin:/opt/mssql-tools/bin:/opt/mssql-tools/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  14.17.6
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@hans141%2fdraft-npm: Not found
+      at Request.params.callback [as _callback] (/home/oem/.yarn/lib/cli.js:67029:18)
+      at Request.self.callback (/home/oem/.yarn/lib/cli.js:140883:22)
+      at Request.emit (events.js:400:28)
+      at Request.<anonymous> (/home/oem/.yarn/lib/cli.js:141855:10)
+      at Request.emit (events.js:400:28)
+      at IncomingMessage.<anonymous> (/home/oem/.yarn/lib/cli.js:141777:12)
+      at Object.onceWrapper (events.js:519:28)
+      at IncomingMessage.emit (events.js:412:35)
+      at endReadableNT (internal/streams/readable.js:1317:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21)
+
+npm manifest: 
+  {
+    "name": "@Hans141/draft-npm",
+    "version": "0.1.2",
+    "dependencies": {
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Hans141/Draft-npm.git"
+  },
+  "publishConfig": {
+    "Hans141:registry": "https://npm.pkg.github.com"
+  },
+    "scripts": {
+      "start": "node index.js"
+    },
+    "eslintConfig": {
+      "extends": [
+        "react-app",
+        "react-app/jest"
+      ]
+    },
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
