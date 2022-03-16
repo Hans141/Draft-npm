@@ -1,6 +1,7 @@
-import * as tf from '@tensorflow/tfjs';
-// console.log('tf.reshape', tf.reshape())
+import * as tf from '@tensorflow/tfjs-node';
+// import inkjet from "inkjet"
 let model;
+// let arrayData
 const initModel = async () => {
   if (!model) model = await tf.loadGraphModel("http://localhost:1231/model.json");
 }
@@ -16,8 +17,8 @@ let CardModel = {
     const before = Date.now();
     let processedImage = await tf.tensor3d(result)
     console.log('processedImage', processedImage)
-    const prediction = await model.predict(tf.reshape(processedImage, shape = [-1, 210, 280, 3]));
-    const label = prediction.argMax(axis = 1).dataSync()[0];
+    const prediction = await model.predict(tf.reshape(processedImage, [-1, 210, 280, 3]));
+    const label = prediction.argMax(1).dataSync()[0];
     const after = Date.now();
     let timeProcess = after - before
     return {
@@ -26,13 +27,23 @@ let CardModel = {
     }
 
   },
-  getLabelFromFile: async function (model, fileUrl) {
-    console.log('model', model)
-  }
+  // getLabelFromFile: async function (model, data) {
+  //   // console.log('model', model)
+  //   let processedImage = await tf.tensor3d(data)
+  //   // console.log('processedImage', processedImage)
+  //   const prediction = await model.predict(tf.reshape(processedImage, [-1, 210, 280, 3]));
+  //   const label = prediction.argMax(1).dataSync()[0];
+  //   console.log('label', label)
+  // }
 }
 
 // do the epic
-
+// let unit8 = async () => {
+//   await inkjet.decode(fs.readFileSync('./fl2.jpg'), function (err, decoded) {
+//     // decoded: { width: number, height: number, data: Uint8Array }
+//     arrayData = arrayToRgbArray(decoded.data)
+//   });
+// }
 let arrayToRgbArray = (data) => {
   let input = []
   for (let i = 0; i < 210; i++) {
@@ -48,7 +59,8 @@ let arrayToRgbArray = (data) => {
 }
 let main = async () => {
   await initModel()
-
+  // await unit8()
+  // CardModel.getLabelFromFile(model, arrayData)
 }
 main()
 // CardModel.x(2, 3)

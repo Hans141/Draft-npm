@@ -1,9 +1,11 @@
 {
   "name": "@hans141/draft-npm",
-  "version": "0.2.6",
+  "version": "0.2.8",
   "dependencies": {
     "@tensorflow/tfjs": "^3.13.0",
+    "@tensorflow/tfjs-node": "^3.14.0",
     "canvas": "^2.9.0",
+    "inkjet": "^3.0.0",
     "pixel-util": "0.0.2"
   },
   "type": "module",
